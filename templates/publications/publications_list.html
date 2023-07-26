@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}Главная{% endblock %}
+{{% block content %}
+    <div class="row justify-content-center">
+        {% for publication in publications %}
+            <div class="card" style="width: 18rem;">
+                <img src="{{ publication.photo }}" class="card-img-top" alt="...">
+            </div>
+        {% empty %}
+            <span>Создайте публикацию</span>
+        {% endfor %}
+        {% if is_paginated %}
+            {% include 'partial/pagination.html' %}
+        {% endif %}
+    </div>
+{% endblock %}
