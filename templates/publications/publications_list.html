@@ -3,14 +3,14 @@
 {{% block content %}
     <div class="row justify-content-center">
         {% for publication in publications %}
-            <div class="card" style="width: 18rem;">
-                <img src="{{ publication.photo }}" class="card-img-top" alt="...">
+            <div class="card justify-content-center me-3 mb-3" style="width: 12rem; height: 12rem">
+                <img src="{{ publication.photo.url }}" class="card-img-top" style="height: 11rem;" alt="...">
             </div>
         {% empty %}
             <span>Создайте публикацию</span>
         {% endfor %}
         {% if is_paginated %}
-            {% include 'partial/pagination.html' %}
+            {% include 'partials/pagination.html' %}
         {% endif %}
     </div>
 {% endblock %}

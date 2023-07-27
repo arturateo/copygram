@@ -79,3 +79,5 @@ cython_debug/
 *.zip
 .idea
 trash.html
+/user_pick/
+/uploads/

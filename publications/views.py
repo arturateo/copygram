@@ -1,7 +1,7 @@
 from urllib.parse import urlencode
 
 from django.shortcuts import redirect
-from django.views.generic import CreateView, ListView
+from django.views.generic import CreateView, ListView, DetailView
 
 from publications.forms.publications_form import PublicationsForm
 from publications.forms.search_form import SearchForm
@@ -15,7 +15,6 @@ class PublicationsList(ListView):
     template_name = 'publications/publications_list.html'
     context_object_name = 'publications'
     paginate_by = 5
-    paginate_orphans = 1
     ordering = ("create_date",)
     page_kwarg = 'page'
 
@@ -57,8 +56,14 @@ class PublicationCreate(CreateView):
         project.author = self.request.user
         project.save()
         return redirect("publications")
-                        # , pk=project.pk)
+        # , pk=project.pk)
 
     def get_success_url(self):
         return reverse("publications")
-                       # , kwargs={"pk": self.object.pk})
+        # , kwargs={"pk": self.object.pk})
+
+
+class PublicationDetail(DetailView):
+    model = Publications
+    template_name = 'publications/publications_detail.html'
+    context_object_name = 'publication'

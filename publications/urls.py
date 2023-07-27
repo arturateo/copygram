@@ -1,6 +1,4 @@
-from django.contrib import admin
-from django.urls import path, include
-
+from django.urls import path
 from publications.views import PublicationsList, PublicationCreate
 
 urlpatterns = [
