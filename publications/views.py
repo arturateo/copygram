@@ -14,9 +14,7 @@ class PublicationsList(ListView):
     model = Publications
     template_name = 'publications/publications_list.html'
     context_object_name = 'publications'
-    paginate_by = 5
-    ordering = ("create_date",)
-    page_kwarg = 'page'
+    ordering = ("-create_date",)
 
     def dispatch(self, request, *args, **kwargs):
         self.form = self.get_search_form()
@@ -59,7 +57,7 @@ class PublicationCreate(CreateView):
         # , pk=project.pk)
 
     def get_success_url(self):
-        return reverse("publications")
+        return reverse("publications:home")
         # , kwargs={"pk": self.object.pk})
 
 
