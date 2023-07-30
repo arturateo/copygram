@@ -27,8 +27,9 @@
             <div class="card-footer">
                 <div>
                     <a href="#"><i class="text-white fa-2xl fa-regular fa-heart"></i></a>
-                    <a href="{% url 'publications:publication_detail' publication.pk %}"><i
-                            class="text-white pb-4 ps-2 fa-2xl fa-regular fa-message"></i></a>
+                    <span class="text-white">{{ publication.get_total_comment }}</span>
+                    <span><i class="text-white pb-4 ps-2 fa-2xl fa-regular fa-message"></i></span>
+                    <span class="text-white">{{ publication.get_total_comment }}</span>
                 </div>
                 <span class=" text-white">{{ publication.discriptions }}</span>
                 <div>

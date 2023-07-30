@@ -1,6 +1,8 @@
-from django.contrib.auth import login
-from django.shortcuts import render, redirect
+from django.contrib.auth import login, get_user_model
+from django.http import HttpResponseBadRequest, HttpResponseRedirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse
+from django.views import View
 from django.views.generic import CreateView, DetailView
 from accounts.forms import CustomRegisterForm
 from accounts.models import User
@@ -37,3 +39,27 @@ class ProfileView(DetailView):
         publications = Publications.objects.all()
         context['publications'] = publications  # .filter(project_id=self.object.pk).distinct()
         return context
+
+
+class SubscriptionView(View):
+
+    def post(self, request, *args, **kwargs):
+        current_user = get_object_or_404(User, pk=request.user.pk)
+        user = get_object_or_404(User, pk=self.kwargs.get("pk"))
+        current_user.subscriber.set([user],)
+        return redirect("accounts:profile", user.pk)
+
+    def get_success_url(self):
+        return reverse("publications:home")
+
+
+class UnSubscriptionView(View):
+
+    def post(self, request, *args, **kwargs):
+        current_user = get_object_or_404(User, pk=request.user.pk)
+        user = get_object_or_404(User, pk=self.kwargs.get("pk"))
+        current_user.subscriber.remove(user)
+        return redirect("accounts:profile", user.pk)
+
+    def get_success_url(self):
+        return reverse("publications:home")

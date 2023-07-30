@@ -10,6 +10,9 @@ class Publications(models.Model):
     create_date = models.DateTimeField(auto_now_add=True, verbose_name='Дата создания')
     update_date = models.DateTimeField(auto_now=True, verbose_name='Дата обновления')
 
+    def get_total_comment(self):
+        return len(self.publications.all())
+
     class Meta:
         db_table = 'publications'
         verbose_name = 'Публикация'

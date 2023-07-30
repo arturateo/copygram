@@ -8,7 +8,6 @@ from publications.models import Publications
 
 
 class CommentCreate(LoginRequiredMixin, CreateView):
-    template_name = 'comments/comments_create.html'
     form_class = CreateCommentForm
 
     def form_valid(self, form):

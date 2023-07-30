@@ -16,33 +16,50 @@
                         <li class="nav-item">
                             <a class="btn btn-secondary ms-4" href="#">Редактировать профиль</a>
                         </li>
+                        {% if user in profile_user.subscribers.all %}
+                            <li class="nav-item">
+                                <form action="{% url "accounts:unsubscription" profile_user.pk %}" method="POST">
+                                    {% csrf_token %}
+                                    <input name="subscription" value="profile_user.pk" type="hidden">
+                                    <button class="btn btn-secondary ms-4">Отписаться</button>
+                                </form>
+                            </li>
+                        {% else %}
+                            <li class="nav-item">
+                                <form action="{% url "accounts:subscription" profile_user.pk %}" method="POST">
+                                    {% csrf_token %}
+                                    <input name="subscription" value="profile_user.pk" type="hidden">
+                                    <button class="btn btn-secondary ms-4">Подписаться</button>
+                                </form>
+                            </li>
+                        {% endif %}
                     </ul>
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <span class="nav-link text-light">2 публикация</span>
+                            <span class="nav-link text-light">{{ profile_user.get_total_publications }} публикации</span>
                         </li>
                         <li class="nav-item">
-                            <span class="nav-link text-light">1 подписчиков</span>
+                            <span class="nav-link text-light">{{ profile_user.get_total_subscribers }} подписчиков</span>
                         </li>
                         <li class="nav-item">
-                            <span class="nav-link text-light">1 подписок</span>
+                            <span class="nav-link text-light">{{ profile_user.get_total_subscriber }} подписок</span>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
-            <div class="row mt-5">
+        <div class="row mt-5">
             {% for publication in publications %}
                 {% if publication.author == profile_user %}
-                <div class="col-4 d-flex justify-content-around">
-                    <div class="card border-0 justify-content-center me-3 mb-3">
-                        <a href="{% url 'publications:publication_detail' publication.pk %}">
-                            <img src="{{ publication.photo.url }}" class="card-img-top"
-                                 style="width: 309px; height: 309px;"
-                                 alt="...">
-                        </a>
+                    <div class="col-4 d-flex justify-content-around">
+                        <div class="card border-0 justify-content-center me-3 mb-3">
+                            <a href="{% url 'publications:publication_detail' publication.pk %}">
+                                <img src="{{ publication.photo.url }}" class="card-img-top"
+                                     style="width: 309px; height: 309px;"
+                                     alt="...">
+                            </a>
+                        </div>
                     </div>
-                </div>
                 {% endif %}
             {% empty %}
                 <span>Создайте публикацию</span>

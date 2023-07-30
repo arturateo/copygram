@@ -12,6 +12,17 @@ class User(AbstractUser):
     bio = models.TextField(max_length=300, blank=True, null=True, verbose_name='Информация о пользователе')
     phone = PhoneNumberField(null=True, blank=True, unique=True)
     gender = models.CharField(max_length=40, null=True, blank=True, verbose_name='Пол', choices=GENDER)
+    subscriber = models.ManyToManyField('accounts.User', related_name='subscribers', verbose_name='Подписчики',
+                                        blank=True, null=True)
+
+    def get_total_publications(self):
+        return len(self.author.all())
+
+    def get_total_subscriber(self):
+        return len(self.subscriber.all())
+
+    def get_total_subscribers(self):
+        return len(self.subscribers.all())
 
     class Meta:
         db_table = 'users'
@@ -20,4 +31,3 @@ class User(AbstractUser):
 
     def __str__(self):
         return f'{self.username}'
-

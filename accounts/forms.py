@@ -21,8 +21,8 @@ class CustomUserCreationForm(UserCreationForm):
 class CustomRegisterForm(UserCreationForm):
     class Meta:
         model = User
-        fields = ['username', 'password1', 'password2', 'first_name', 'last_name', 'email', 'avatar', 'bio', 'phone',\
-            'gender']
+        fields = ['username', 'password1', 'password2', 'first_name', 'last_name', 'email', 'avatar', 'bio', 'phone', \
+                  'gender']
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -30,3 +30,4 @@ class CustomRegisterForm(UserCreationForm):
             self.fields[field].widget.attrs.update({
                 'class': 'form-control'
             })
+
