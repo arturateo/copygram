@@ -1,8 +1,10 @@
 from urllib.parse import urlencode
 
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import redirect
 from django.views.generic import CreateView, ListView, DetailView
 
+from comments.forms import CreateCommentForm
 from comments.models import Comments
 from publications.forms.publications_form import PublicationsForm
 from publications.forms.search_form import SearchForm
@@ -24,8 +26,9 @@ class PublicationsList(ListView):
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(object_list=None, **kwargs)
-        context["comments"] = Comments.objects.all()
-        context["form"] = self.form
+        context["comments"] = Comments.objects.all().order_by('-create_date')
+        context["form"] = CreateCommentForm
+        context["search_form"] = self.form
         if self.search_value:
             context["query"] = urlencode({'search': self.search_value})
             context["search_value"] = self.search_value
@@ -46,7 +49,7 @@ class PublicationsList(ListView):
         return queryset
 
 
-class PublicationCreate(CreateView):
+class PublicationCreate(LoginRequiredMixin, CreateView):
     model = Publications
     form_class = PublicationsForm
     template_name = 'publications/publication_create.html'

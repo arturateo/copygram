@@ -1,3 +1,4 @@
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render, get_object_or_404, redirect
 from django.views.generic import CreateView
 
@@ -6,7 +7,7 @@ from comments.forms import CreateCommentForm
 from publications.models import Publications
 
 
-class CommentCreate(CreateView):
+class CommentCreate(LoginRequiredMixin, CreateView):
     template_name = 'comments/comments_create.html'
     form_class = CreateCommentForm
 
@@ -17,4 +18,4 @@ class CommentCreate(CreateView):
         comment.comment_author = comment_author
         comment.publications = publications
         comment.save()
-        return redirect("publications:publication_detail", pk=publications.pk)
+        return redirect("publications:home")

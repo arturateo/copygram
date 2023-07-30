@@ -1,51 +1,67 @@
 {% extends 'base.html' %}
 {% block title %}Главная{% endblock %}
 {{% block content %}
-    <div class="col bg-dark">
-        <div class="row justify-content-center">
+    <div class="col bg-dark" style="padding: 0 0 0 35%">
+        <div class="row" style="margin-right: 0;">
             {% for publication in publications %}
-                <div class="col-8">
-                    <div class="card-header ps-2 pb-3 mt-3">
-                        <a href="#" class="d-flex align-items-center text-white text-decoration-none">
-                            <img src="{{ publication.author.avatar.url }}" alt="hugenerd" width="30" height="30"
-                                 class="rounded-circle">
+                {% if forloop.first %}
+                    <div class="col-8 border border-light">
+                {% else %}
+                    <div class="mt-5 col-8 border border-light">
+                {% endif %}
+            <div class="card-header ps-2 pb-3 mt-3">
+                <a href="{% url 'accounts:profile' publication.author.pk %}"
+                   class="d-flex align-items-center text-white text-decoration-none">
+                    <img src="{{ publication.author.avatar.url }}" alt="hugenerd" width="30" height="30"
+                         class="rounded-circle">
 
-                            <span class="d-none d-sm-inline mx-1 text-white">{{ publication.author }}</span>
-                        </a>
-                    </div>
-                    <div class="card-body border-0 justify-content-center me-3 mb-3" style="">
-                        <a href="{% url 'publications:publication_detail' publication.pk %}">
-                            <img src="{{ publication.photo.url }}" class="card-img-top" style="width:100%; height: 100%"
-                                 alt="...">
-                        </a>
-                    </div>
-                    <div class="card-footer">
-                        <div>
-                            <a href="{% url 'comments:create_comments' publication.pk %}"><i
-                                    class="text-white fa-2xl fa-regular fa-heart"></i></a>
-                            <a href="#"><i class="text-white pb-4 ps-2 fa-2xl fa-regular fa-message"></i></a>
-                        </div>
-                        <span class=" text-white">{{ publication.discriptions }}</span>
-                        <span class=" text-white">Комментарии:</span>
-                        <div class="block-comments">
-                            {% for comment in comments %}
-                                {% if comment.publications.id == publication.pk %}
-                                    <div class="comment">
-                                        <div>
-                                            <span class=" text-white">{{ comment.comment_author }}</span>
-                                        </div>
-                                        <span class=" text-white">{{ comment.summary }}</span>
-                                    </div>
-                                {% endif %}
-                            {% empty %}
-                                <span>Создайте публикацию</span>
-                            {% endfor %}
-                        </div>
-                    </div>
+                    <span class="d-none d-sm-inline mx-1 text-white">{{ publication.author }}</span>
+                </a>
+            </div>
+            <div class="card-body border-0 justify-content-center me-3 mb-3" style="">
+                <a href="{% url 'publications:publication_detail' publication.pk %}">
+                    <img src="{{ publication.photo.url }}" class="card-img-top" style="width:100%; height: 100%"
+                         alt="...">
+                </a>
+            </div>
+            <div class="card-footer">
+                <div>
+                    <a href="#"><i class="text-white fa-2xl fa-regular fa-heart"></i></a>
+                    <a href="{% url 'publications:publication_detail' publication.pk %}"><i
+                            class="text-white pb-4 ps-2 fa-2xl fa-regular fa-message"></i></a>
                 </div>
+                <span class=" text-white">{{ publication.discriptions }}</span>
+                <div>
+                    <span class=" text-white">Комментарии:</span>
+                </div>
+                {% include "partials/form.html" with button_text="Добавить комментарий" fields_only=True publication_pk=publication.pk %}
+                <div class="mt-3 block-comments">
+                    {% for comment in comments %}
+                        {% if comment.publications.id == publication.pk %}
+                            <div class="border-bottom border-light comment">
+                                <div>
+                                    <a href="{% url 'accounts:profile' comment.comment_author.pk %}"
+                                       class="d-flex align-items-center text-white text-decoration-none">
+                                        <img src="{{ comment.comment_author.avatar.url }}" alt="hugenerd" width="30"
+                                             height="30"
+                                             class="rounded-circle">
+
+                                        <span class="d-none d-sm-inline mx-1 text-white">{{ comment.comment_author }}</span>
+                                    </a>
+                                </div>
+                                <span class="text-white">{{ comment.summary }}</span>
+                            </div>
+                        {% endif %}
+                    {% empty %}
+                        <span>Создайте публикацию</span>
+                    {% endfor %}
+                </div>
+            </div>
+            </div>
             {% empty %}
                 <span>Создайте публикацию</span>
             {% endfor %}
+            </div>
         </div>
     </div>
 {% endblock %}

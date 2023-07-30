@@ -1,6 +1,6 @@
 <div class="container-fluid">
     <div class="row flex-nowrap">
-        <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
+        <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark position-fixed">
             <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
                 <a href="{% url 'publications:home' %}"
                    class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
@@ -32,7 +32,7 @@
                             <img src="{{ user.avatar.url }}" alt="hugenerd" width="30" height="30"
                                  class="rounded-circle">
 
-                            <span class="d-none d-sm-inline mx-1">{{ request.user }}</span>
+                            <span class="d-none d-sm-inline mx-1">{{ user }}</span>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
                             <li><a class="dropdown-item" href="{% url 'accounts:profile' user.pk %}">Profile</a></li>
