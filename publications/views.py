@@ -3,6 +3,7 @@ from urllib.parse import urlencode
 from django.shortcuts import redirect
 from django.views.generic import CreateView, ListView, DetailView
 
+from comments.models import Comments
 from publications.forms.publications_form import PublicationsForm
 from publications.forms.search_form import SearchForm
 from publications.models import Publications
@@ -23,6 +24,7 @@ class PublicationsList(ListView):
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(object_list=None, **kwargs)
+        context["comments"] = Comments.objects.all()
         context["form"] = self.form
         if self.search_value:
             context["query"] = urlencode({'search': self.search_value})

@@ -21,10 +21,26 @@
                     </div>
                     <div class="card-footer">
                         <div>
-                            <a href="#"><i class="text-white fa-2xl fa-regular fa-heart"></i></a>
+                            <a href="{% url 'comments:create_comments' publication.pk %}"><i
+                                    class="text-white fa-2xl fa-regular fa-heart"></i></a>
                             <a href="#"><i class="text-white pb-4 ps-2 fa-2xl fa-regular fa-message"></i></a>
                         </div>
                         <span class=" text-white">{{ publication.discriptions }}</span>
+                        <span class=" text-white">Комментарии:</span>
+                        <div class="block-comments">
+                            {% for comment in comments %}
+                                {% if comment.publications.id == publication.pk %}
+                                    <div class="comment">
+                                        <div>
+                                            <span class=" text-white">{{ comment.comment_author }}</span>
+                                        </div>
+                                        <span class=" text-white">{{ comment.summary }}</span>
+                                    </div>
+                                {% endif %}
+                            {% empty %}
+                                <span>Создайте публикацию</span>
+                            {% endfor %}
+                        </div>
                     </div>
                 </div>
             {% empty %}
