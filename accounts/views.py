@@ -46,7 +46,7 @@ class SubscriptionView(View):
     def post(self, request, *args, **kwargs):
         current_user = get_object_or_404(User, pk=request.user.pk)
         user = get_object_or_404(User, pk=self.kwargs.get("pk"))
-        current_user.subscriber.set([user],)
+        current_user.subscriber.add(user)
         return redirect("accounts:profile", user.pk)
 
     def get_success_url(self):

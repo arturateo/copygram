@@ -2,7 +2,6 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render, get_object_or_404, redirect
 from django.views.generic import CreateView
 
-from accounts.models import User
 from comments.forms import CreateCommentForm
 from publications.models import Publications
 

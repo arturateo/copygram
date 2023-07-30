@@ -55,15 +55,13 @@ class PublicationCreate(LoginRequiredMixin, CreateView):
     template_name = 'publications/publication_create.html'
 
     def form_valid(self, form):
-        project = form.save(commit=False)
-        project.author = self.request.user
-        project.save()
-        return redirect("publications")
-        # , pk=project.pk)
+        publications = form.save(commit=False)
+        publications.author = self.request.user
+        publications.save()
+        return redirect("publications:publication_detail", pk=publications.pk)
 
     def get_success_url(self):
-        return reverse("publications:home")
-        # , kwargs={"pk": self.object.pk})
+        return reverse("publications:publication_detail", kwargs={"pk": self.object.pk})
 
 
 class PublicationDetail(DetailView):

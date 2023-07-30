@@ -7,6 +7,8 @@ class Publications(models.Model):
                                verbose_name='Автор')
     discriptions = models.TextField(null=True, blank=True, max_length=300, verbose_name='Описание публикации')
     photo = models.ImageField(null=False, blank=False, upload_to='publications', verbose_name='Фото публикации')
+    like = models.ManyToManyField('accounts.User', related_name='likes', verbose_name='Лайки',
+                                  blank=True, null=True)
     create_date = models.DateTimeField(auto_now_add=True, verbose_name='Дата создания')
     update_date = models.DateTimeField(auto_now=True, verbose_name='Дата обновления')
 
