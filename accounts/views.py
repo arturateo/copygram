@@ -1,8 +1,7 @@
 from django.contrib.auth import login, get_user_model
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, redirect
 from django.urls import reverse
-from django.views import View
-from django.views.generic import CreateView, DetailView
+from django.views.generic import CreateView, DetailView, ListView
 from accounts.forms import CustomRegisterForm
 from accounts.models import User
 from publications.models import Publications
@@ -26,6 +25,18 @@ class RegisterView(CreateView):
         if not next_url:
             next_url = reverse('to_do_list:home')
         return next_url
+
+
+class ProfileListView(ListView):
+    template_name = 'accounts/profile.html'
+    queryset = User.objects.all()
+    context_object_name = 'profile_user'
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super().get_context_data(object_list=None, **kwargs)
+        publications = Publications.objects.all()
+        context['publications'] = publications.filter(author__pk=self.object.pk).distinct()
+        return context
 
 
 class ProfileView(DetailView):

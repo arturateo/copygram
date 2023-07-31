@@ -62,3 +62,9 @@ class PublicationDetail(DetailView):
     model = Publications
     template_name = 'publications/publications_detail.html'
     context_object_name = 'publication'
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super().get_context_data(object_list=None, **kwargs)
+        context["form"] = CreateCommentForm
+        context["comments"] = Comments.objects.all().order_by('-create_date')
+        return context
