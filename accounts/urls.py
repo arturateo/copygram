@@ -1,7 +1,7 @@
 from django.contrib.auth.views import LoginView, LogoutView
 from django.urls import path
 
-from accounts.views import RegisterView, ProfileView, SubscriptionView, UnSubscriptionView
+from accounts.views import RegisterView, ProfileView
 
 app_name = 'accounts'
 
@@ -10,6 +10,4 @@ urlpatterns = [
     path('logout/', LogoutView.as_view(), name="logout"),
     path('register/', RegisterView.as_view(), name="register"),
     path('profile/<int:pk>', ProfileView.as_view(), name='profile'),
-    path('subscription/<int:pk>', SubscriptionView.as_view(), name='subscription'),
-    path('unsubscription/<int:pk>', UnSubscriptionView.as_view(), name='unsubscription'),
 ]

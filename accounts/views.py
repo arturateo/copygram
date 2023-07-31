@@ -38,21 +38,3 @@ class ProfileView(DetailView):
         publications = Publications.objects.all()
         context['publications'] = publications.filter(author__pk=self.object.pk).distinct()
         return context
-
-
-class SubscriptionView(View):
-
-    def post(self, request, *args, **kwargs):
-        current_user = get_object_or_404(User, pk=request.user.pk)
-        user = get_object_or_404(User, pk=self.kwargs.get("pk"))
-        current_user.subscriber.add(user)
-        return redirect("accounts:profile", user.pk)
-
-
-class UnSubscriptionView(View):
-
-    def post(self, request, *args, **kwargs):
-        current_user = get_object_or_404(User, pk=request.user.pk)
-        user = get_object_or_404(User, pk=self.kwargs.get("pk"))
-        current_user.subscriber.remove(user)
-        return redirect("accounts:profile", user.pk)
