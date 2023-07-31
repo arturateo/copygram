@@ -1,5 +1,4 @@
 from django.contrib.auth import login, get_user_model
-from django.http import HttpResponseBadRequest, HttpResponseRedirect
 from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse
 from django.views import View
@@ -11,7 +10,7 @@ from publications.models import Publications
 
 # Create your views here.
 class RegisterView(CreateView):
-    model = User
+    model = get_user_model()
     template_name = 'accounts/register.html'
     form_class = CustomRegisterForm
 
@@ -37,7 +36,7 @@ class ProfileView(DetailView):
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(object_list=None, **kwargs)
         publications = Publications.objects.all()
-        context['publications'] = publications  # .filter(project_id=self.object.pk).distinct()
+        context['publications'] = publications.filter(author__pk=self.object.pk).distinct()
         return context
 
 
@@ -49,9 +48,6 @@ class SubscriptionView(View):
         current_user.subscriber.add(user)
         return redirect("accounts:profile", user.pk)
 
-    def get_success_url(self):
-        return reverse("publications:home")
-
 
 class UnSubscriptionView(View):
 
@@ -60,6 +56,3 @@ class UnSubscriptionView(View):
         user = get_object_or_404(User, pk=self.kwargs.get("pk"))
         current_user.subscriber.remove(user)
         return redirect("accounts:profile", user.pk)
-
-    def get_success_url(self):
-        return reverse("publications:home")

@@ -50,17 +50,15 @@
         </nav>
         <div class="row mt-5">
             {% for publication in publications %}
-                {% if publication.author == profile_user %}
-                    <div class="col-4 d-flex justify-content-around">
-                        <div class="card border-0 justify-content-center me-3 mb-3">
-                            <a href="{% url 'publications:publication_detail' publication.pk %}">
-                                <img src="{{ publication.photo.url }}" class="card-img-top"
-                                     style="width: 309px; height: 309px;"
-                                     alt="...">
-                            </a>
-                        </div>
+                <div class="col-4 d-flex justify-content-around">
+                    <div class="card border-0 justify-content-center me-3 mb-3">
+                        <a href="{% url 'publications:publication_detail' publication.pk %}">
+                            <img src="{{ publication.photo.url }}" class="card-img-top"
+                                 style="width: 309px; height: 309px;"
+                                 alt="...">
+                        </a>
                     </div>
-                {% endif %}
+                </div>
             {% empty %}
                 <span>Создайте публикацию</span>
             {% endfor %}

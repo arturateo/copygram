@@ -26,9 +26,27 @@
             </div>
             <div class="card-footer">
                 <div>
-                    <a href="#"><i class="text-white fa-2xl fa-regular fa-heart"></i></a>
-                    <span class="text-white">{{ publication.get_total_comment }}</span>
-                    <span><i class="text-white pb-4 ps-2 fa-2xl fa-regular fa-message"></i></span>
+                    {% if user in publication.like.all %}
+                        <form name="like_form" class="d-inline" action="{% url 'likes:unlike' publication.pk %}"
+                              method="POST">
+                            {% csrf_token %}
+                            <input name="user_like" value="profile_user.pk" type="hidden">
+                            <button style="border: 0; background: 0;"><i
+                                    class="text-white fa-2xl fa-regular fa-heart"></i></button>
+                        </form>
+                    {% else %}
+                        <form name="like_form" class="d-inline" action="{% url 'likes:like' publication.pk %}"
+                              method="POST">
+                            {% csrf_token %}
+                            <input name="user_like" value="profile_user.pk" type="hidden">
+                            <button style="border: 0; background: 0;"><i
+                                    class="text-white fa-2xl fa-regular fa-heart"></i></
+                            >
+                        </form>
+                    {% endif %}
+                    <span class="text-white">{{ publication.get_total_like }}</span>
+                    <a href="{% url 'publications:publication_detail' publication.pk %}"><i
+                            class="text-white pb-4 ps-2 fa-2xl fa-regular fa-message"></i></a>
                     <span class="text-white">{{ publication.get_total_comment }}</span>
                 </div>
                 <span class=" text-white">{{ publication.discriptions }}</span>

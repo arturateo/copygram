@@ -42,12 +42,6 @@ class PublicationsList(ListView):
             return self.form.cleaned_data['search']
         return None
 
-    def get_queryset(self):
-        queryset = super().get_queryset()
-        # if self.search_value:
-        #     queryset = queryset.filter(author__icontains=self.search_value)
-        return queryset
-
 
 class PublicationCreate(LoginRequiredMixin, CreateView):
     model = Publications
