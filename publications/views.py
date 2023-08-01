@@ -1,5 +1,3 @@
-from urllib.parse import urlencode
-
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import redirect
 from django.views.generic import CreateView, ListView, DetailView
@@ -21,7 +19,6 @@ class PublicationsList(ListView):
 
     def dispatch(self, request, *args, **kwargs):
         self.form = self.get_search_form()
-        self.search_value = self.get_search_value()
         return super().dispatch(request, *args, **kwargs)
 
     def get_context_data(self, *, object_list=None, **kwargs):
@@ -29,18 +26,11 @@ class PublicationsList(ListView):
         context["comments"] = Comments.objects.all().order_by('-create_date')
         context["form"] = CreateCommentForm
         context["search_form"] = self.form
-        if self.search_value:
-            context["query"] = urlencode({'search': self.search_value})
-            context["search_value"] = self.search_value
         return context
 
     def get_search_form(self):
         return SearchForm(self.request.GET)
 
-    def get_search_value(self):
-        if self.form.is_valid():
-            return self.form.cleaned_data['search']
-        return None
 
 
 class PublicationCreate(LoginRequiredMixin, CreateView):

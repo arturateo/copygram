@@ -1,3 +1,4 @@
+from django.contrib.auth import get_user_model
 from phonenumber_field.modelfields import PhoneNumberField
 from django.db import models
 from django.contrib.auth.models import AbstractUser
@@ -12,8 +13,7 @@ class User(AbstractUser):
     bio = models.TextField(max_length=300, blank=True, null=True, verbose_name='Информация о пользователе')
     phone = PhoneNumberField(null=True, blank=True, unique=True)
     gender = models.CharField(max_length=40, null=True, blank=True, verbose_name='Пол', choices=GENDER)
-    subscriber = models.ManyToManyField('accounts.User', related_name='subscribers', verbose_name='Подписчики',
-                                        blank=True, null=True)
+    subscriber = models.ManyToManyField('accounts.User', related_name='subscribers', verbose_name='Подписчики')
 
     def get_total_publications(self):
         return len(self.author.all())

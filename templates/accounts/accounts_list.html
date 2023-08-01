@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block title %}Главная{% endblock %}
+{% block content %}
+    <div class="col" style="padding: 0 0 0 17%">
+
+        {% for search_user in users %}
+            <div class="card">
+                <div class="card-body">
+                    <a href="{% url 'accounts:profile' search_user.pk %}"
+                       class="d-flex align-items-center text-white">
+                        <img src="{{ search_user.avatar.url }}" alt="hugenerd" width="30" height="30"
+                             class="rounded-circle">
+                        <h5 class="text-black card-title" style="margin: 0 0 0 5px">{{ search_user.username }}</h5></a>
+                    <p class="card-text">{{ search_user.bio }}</p>
+
+                </div>
+            </div>
+        {% empty %}
+            <span class="text-white">По пробуйте другой запрос</span>
+        {% endfor %}
+        {% if is_paginated %}
+            {% include 'partials/pagination.html' %}
+        {% endif %}
+    </div>
+    </div>
+
+{% endblock %}
