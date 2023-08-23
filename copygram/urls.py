@@ -20,6 +20,10 @@ from django.contrib import admin
 from django.urls import path, include
 from copygram import settings
 
+api_list = [
+    path('v1/', include('api_v1.urls')),
+]
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('publications.urls')),
@@ -27,4 +31,5 @@ urlpatterns = [
     path('comments/', include('comments.urls')),
     path('subscriber/', include('subscriber.urls')),
     path('likes/', include('likes.urls')),
+    path('api/', include(api_list)),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
