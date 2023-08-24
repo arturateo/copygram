@@ -10,7 +10,7 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 
 from api_v1.permissions import IsAuthor
-from api_v1.serializers import PublicationsSerializer
+from api_v1.serializers import PublicationsSerializer, CommentsSerializer
 from comments.models import Comments
 from publications.models import Publications
 
@@ -48,9 +48,9 @@ class PublicationsViewSet(viewsets.ModelViewSet):
         return Response({"likes": publications.get_total_like()})
 
 
-# class CommentsViewSet(viewsets.ModelViewSet):
-#     queryset = Comments.objects.all()
-# serializer_class = CommentsSerializer
+class CommentsViewSet(viewsets.ModelViewSet):
+    queryset = Comments.objects.all()
+    serializer_class = CommentsSerializer
 
 class LogoutView(APIView):
     permission_classes = [IsAuthenticated]

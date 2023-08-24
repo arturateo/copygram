@@ -28,15 +28,18 @@
                 <div>
                     {% if user in publication.like.all %}
                         <a class="likes" href="{% url "api_v1:publications-un_likes" publication.pk %}"
-                           data-publication-id="{{ publication.pk }}"><i class="text-white fa-solid fa-heart fa-2xl"></i></a>
+                           data-publication-id="{{ publication.pk }}"><i
+                                class="text-white fa-solid fa-heart fa-2xl"></i></a>
+
+                        <span class="text-white" id="publication_likes_count_{{ publication.id }}"> {{ publication.get_total_like }}</span>
                     {% else %}
                         <a class="likes" href="{% url "api_v1:publications-get_likes" publication.pk %}"
-                           data-publication-id="{{ publication.pk }}"><i class="text-white fa-regular fa-heart fa-2xl"></i></a>
+                           data-publication-id="{{ publication.pk }}"><i
+                                class="text-white fa-regular fa-heart fa-2xl"></i></a>
+
+                        <span class="text-white" id="publication_likes_count_{{ publication.id }}"> {{ publication.get_total_like }}</span>
                     {% endif %}
 
-                    <p class="text-white">Количество лайков <span
-                            id="publication_likes_count_{{ publication.id }}">{{ publication.get_total_like }}</span>
-                    </p>
                     <a href="{% url 'publications:publication_detail' publication.pk %}"><i
                             class="text-white pb-4 ps-2 fa-2xl fa-regular fa-message"></i></a>
                     <span class="text-white">{{ publication.get_total_comment }}</span>
