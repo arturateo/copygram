@@ -1,464 +1,383 @@
 [
 {
-  "model": "accounts.user",
-  "pk": 1,
-  "fields": {
-    "password": "pbkdf2_sha256$600000$MqFpkx9vTISFEm0eQA2djP$Qw1gtpXzzC4+eMCqtu3s0OoeXHdSkhBLkJmuR8j7rKY=",
-    "last_login": "2023-07-28T13:46:07.461Z",
-    "is_superuser": true,
-    "username": "admin",
-    "first_name": "",
-    "last_name": "",
-    "is_staff": true,
-    "is_active": true,
-    "date_joined": "2023-07-25T18:59:10Z",
-    "email": "admin@admin.com",
-    "avatar": "avatar/4caa18be-baa4-4900-a616-686213af23c7.png",
-    "bio": "Что то обо мне",
-    "phone": "+996554273109",
-    "gender": "man",
-    "groups": [],
-    "user_permissions": [],
-    "subscriber": []
-  }
+    "model": "publications.publications",
+    "pk": 6,
+    "fields": {
+        "author": 1,
+        "discriptions": "123123",
+        "photo": "publications/Superposition_Benchmark_v1.1_2874_1669924906.png",
+        "create_date": "2023-07-26T18:04:19.964Z",
+        "update_date": "2023-07-26T18:04:19.964Z",
+        "like": []
+    }
 },
 {
-  "model": "accounts.user",
-  "pk": 2,
-  "fields": {
-    "password": "pbkdf2_sha256$600000$v1FtnvfRXcLogH9FbTjtTs$fc12mTW/72Y6jlXUd74VtSCB3SVylXVlg2UwUO3Rz2M=",
-    "last_login": "2023-07-30T16:30:09.340Z",
-    "is_superuser": false,
-    "username": "user1",
-    "first_name": "Artur",
-    "last_name": "",
-    "is_staff": false,
-    "is_active": true,
-    "date_joined": "2023-07-25T19:56:05.467Z",
-    "email": "user1@user1.com",
-    "avatar": "user_pick/4caa18be-baa4-4900-a616-686213af23c7_Ax7lGAS.png",
-    "bio": "",
-    "phone": null,
-    "gender": "man",
-    "groups": [],
-    "user_permissions": [],
-    "subscriber": []
-  }
+    "model": "publications.publications",
+    "pk": 7,
+    "fields": {
+        "author": 1,
+        "discriptions": "тесттесттестест",
+        "photo": "publications/1680197788_kartinki-pibig-info-p-kartinki-krasivie-raznie-neobichnie-so-smi-1.jpg",
+        "create_date": "2023-07-27T13:32:41.046Z",
+        "update_date": "2023-07-27T13:32:41.046Z",
+        "like": []
+    }
 },
 {
-  "model": "accounts.user",
-  "pk": 3,
-  "fields": {
-    "password": "pbkdf2_sha256$600000$mHCYG0gDxvRLyQQnA58VJc$ZMKv9/U4iXLDxlww+0W/YfWedzm/Ialiq3956Tb1hfQ=",
-    "last_login": "2023-07-31T15:02:32.482Z",
-    "is_superuser": false,
-    "username": "user2",
-    "first_name": "User2",
-    "last_name": "",
-    "is_staff": false,
-    "is_active": true,
-    "date_joined": "2023-07-28T14:39:15.151Z",
-    "email": "user2@user2.com",
-    "avatar": "avatar/4caa18be-baa4-4900-a616-686213af23c7_SWLvQab.png",
-    "bio": "Чтото о user2",
-    "phone": "+996555000000",
-    "gender": "woman",
-    "groups": [],
-    "user_permissions": [],
-    "subscriber": [
-      5
-    ]
-  }
+    "model": "publications.publications",
+    "pk": 8,
+    "fields": {
+        "author": 1,
+        "discriptions": "ирлорило",
+        "photo": "publications/4caa18be-baa4-4900-a616-686213af23c7.png",
+        "create_date": "2023-07-27T13:32:51.175Z",
+        "update_date": "2023-07-27T13:32:51.175Z",
+        "like": []
+    }
 },
 {
-  "model": "accounts.user",
-  "pk": 4,
-  "fields": {
-    "password": "pbkdf2_sha256$600000$8gXMs8juMrrb6tY5YRyYZ4$n4PdyenBoBlu6z2PApwdqa4ev7SD2e67dWzxYcARJvk=",
-    "last_login": "2023-07-31T15:02:26.594Z",
-    "is_superuser": false,
-    "username": "user3",
-    "first_name": "user3",
-    "last_name": "",
-    "is_staff": false,
-    "is_active": true,
-    "date_joined": "2023-07-28T15:31:18.622Z",
-    "email": "user3@user3.com",
-    "avatar": "avatar/4caa18be-baa4-4900-a616-686213af23c7_l7m4M2J.png",
-    "bio": "user3user3user3user3",
-    "phone": "+996777000000",
-    "gender": "man",
-    "groups": [],
-    "user_permissions": [],
-    "subscriber": []
-  }
+    "model": "publications.publications",
+    "pk": 9,
+    "fields": {
+        "author": 1,
+        "discriptions": "123123",
+        "photo": "publications/Superposition_Benchmark_v1.1_2874_1669924906_Mx4VDMB.png",
+        "create_date": "2023-07-27T19:07:18.694Z",
+        "update_date": "2023-07-27T19:07:18.694Z",
+        "like": []
+    }
 },
 {
-  "model": "accounts.user",
-  "pk": 5,
-  "fields": {
-    "password": "pbkdf2_sha256$600000$pULbIJ0BL5mM0bwAUplFmU$7Xh96pQXjpAfErbGDaAhj+DQ06ycZALcPw8I2N+gL+4=",
-    "last_login": "2023-07-30T16:32:15.208Z",
-    "is_superuser": false,
-    "username": "user5",
-    "first_name": "User5",
-    "last_name": "",
-    "is_staff": false,
-    "is_active": true,
-    "date_joined": "2023-07-30T16:32:14.416Z",
-    "email": "user5@user5.com",
-    "avatar": "avatar/Superposition_Benchmark_v1.1_2874_1669924906.png",
-    "bio": "",
-    "phone": null,
-    "gender": null,
-    "groups": [],
-    "user_permissions": [],
-    "subscriber": [
-      1,
-      4
-    ]
-  }
+    "model": "publications.publications",
+    "pk": 10,
+    "fields": {
+        "author": 1,
+        "discriptions": "1231231",
+        "photo": "publications/1680197788_kartinki-pibig-info-p-kartinki-krasivie-raznie-neobichnie-so-smi_bsvl8dE.jpg",
+        "create_date": "2023-07-27T19:07:29.801Z",
+        "update_date": "2023-07-27T19:07:29.801Z",
+        "like": []
+    }
 },
 {
-  "model": "comments.comments",
-  "pk": 4,
-  "fields": {
-    "comment_author": 4,
-    "publications": 15,
-    "summary": "asdasd",
-    "create_date": "2023-07-28T17:11:04.363Z",
-    "update_date": "2023-07-28T17:11:04.363Z"
-  }
+    "model": "publications.publications",
+    "pk": 11,
+    "fields": {
+        "author": 1,
+        "discriptions": "12312312",
+        "photo": "publications/Superposition_Benchmark_v1.1_2874_1669924906_SzBQxXb.png",
+        "create_date": "2023-07-27T19:11:15.502Z",
+        "update_date": "2023-07-27T19:11:15.502Z",
+        "like": []
+    }
 },
 {
-  "model": "comments.comments",
-  "pk": 5,
-  "fields": {
-    "comment_author": 4,
-    "publications": 15,
-    "summary": "asdasd",
-    "create_date": "2023-07-28T17:11:36.071Z",
-    "update_date": "2023-07-28T17:11:36.071Z"
-  }
+    "model": "publications.publications",
+    "pk": 12,
+    "fields": {
+        "author": 1,
+        "discriptions": "1231231",
+        "photo": "publications/1680197788_kartinki-pibig-info-p-kartinki-krasivie-raznie-neobichnie-so-smi-1_1.jpg",
+        "create_date": "2023-07-27T19:11:21.599Z",
+        "update_date": "2023-07-27T19:11:21.599Z",
+        "like": []
+    }
 },
 {
-  "model": "comments.comments",
-  "pk": 6,
-  "fields": {
-    "comment_author": 4,
-    "publications": 14,
-    "summary": "11111111112222222222233333333",
-    "create_date": "2023-07-28T17:38:46.722Z",
-    "update_date": "2023-07-28T17:38:46.722Z"
-  }
+    "model": "publications.publications",
+    "pk": 13,
+    "fields": {
+        "author": 1,
+        "discriptions": "12341234",
+        "photo": "publications/1680197788_kartinki-pibig-info-p-kartinki-krasivie-raznie-neobichnie-so-smi_liFmbsS.jpg",
+        "create_date": "2023-07-27T19:13:09.032Z",
+        "update_date": "2023-07-27T19:13:09.032Z",
+        "like": []
+    }
 },
 {
-  "model": "comments.comments",
-  "pk": 7,
-  "fields": {
-    "comment_author": 2,
-    "publications": 15,
-    "summary": "asdasdasd",
-    "create_date": "2023-07-30T16:04:10.951Z",
-    "update_date": "2023-07-30T16:04:10.951Z"
-  }
+    "model": "publications.publications",
+    "pk": 14,
+    "fields": {
+        "author": 4,
+        "discriptions": "adsadasda",
+        "photo": "publications/image-rectangle_600_x.jpg",
+        "create_date": "2023-07-28T16:13:57.849Z",
+        "update_date": "2023-07-28T16:13:57.849Z",
+        "like": []
+    }
 },
 {
-  "model": "comments.comments",
-  "pk": 8,
-  "fields": {
-    "comment_author": 5,
-    "publications": 15,
-    "summary": "asddasd",
-    "create_date": "2023-07-30T16:43:49.179Z",
-    "update_date": "2023-07-30T16:43:49.179Z"
-  }
+    "model": "publications.publications",
+    "pk": 15,
+    "fields": {
+        "author": 4,
+        "discriptions": "adsadasda",
+        "photo": "publications/image-rectangle_600_x_4hNxkUx.jpg",
+        "create_date": "2023-07-28T16:14:28.229Z",
+        "update_date": "2023-07-28T16:14:28.229Z",
+        "like": []
+    }
 },
 {
-  "model": "comments.comments",
-  "pk": 9,
-  "fields": {
-    "comment_author": 5,
-    "publications": 15,
-    "summary": "asdasd",
-    "create_date": "2023-07-30T16:44:51.327Z",
-    "update_date": "2023-07-30T16:44:51.327Z"
-  }
+    "model": "publications.publications",
+    "pk": 16,
+    "fields": {
+        "author": 5,
+        "discriptions": "asdassdasd",
+        "photo": "publications/Logo.png",
+        "create_date": "2023-07-30T20:09:04.408Z",
+        "update_date": "2023-07-30T20:09:04.408Z",
+        "like": []
+    }
 },
 {
-  "model": "comments.comments",
-  "pk": 10,
-  "fields": {
-    "comment_author": 5,
-    "publications": 15,
-    "summary": "asdasd",
-    "create_date": "2023-07-30T16:45:19.525Z",
-    "update_date": "2023-07-30T16:45:19.525Z"
-  }
+    "model": "publications.publications",
+    "pk": 17,
+    "fields": {
+        "author": 5,
+        "discriptions": "asdassdasd",
+        "photo": "publications/Logo_PFGqwSz.png",
+        "create_date": "2023-07-30T20:11:08.272Z",
+        "update_date": "2023-07-30T20:11:08.272Z",
+        "like": []
+    }
 },
 {
-  "model": "comments.comments",
-  "pk": 11,
-  "fields": {
-    "comment_author": 5,
-    "publications": 15,
-    "summary": "0090900909",
-    "create_date": "2023-07-30T16:45:24.165Z",
-    "update_date": "2023-07-30T16:45:24.165Z"
-  }
+    "model": "publications.publications",
+    "pk": 18,
+    "fields": {
+        "author": 3,
+        "discriptions": "asdasdasdassdassdasdasdasdasdqw12312312321312313",
+        "photo": "publications/image-rectangle_600_x_o4sY9Rf.jpg",
+        "create_date": "2023-07-31T15:05:59.257Z",
+        "update_date": "2023-07-31T15:05:59.257Z",
+        "like": []
+    }
 },
 {
-  "model": "comments.comments",
-  "pk": 12,
-  "fields": {
-    "comment_author": 5,
-    "publications": 17,
-    "summary": "nbkn",
-    "create_date": "2023-07-30T20:11:39.544Z",
-    "update_date": "2023-07-30T20:11:39.544Z"
-  }
+    "model": "publications.publications",
+    "pk": 19,
+    "fields": {
+        "author": 2,
+        "discriptions": "12312312313",
+        "photo": "publications/4caa18be-baa4-4900-a616-686213af23c7_sWvajff.png",
+        "create_date": "2023-08-23T19:25:48.510Z",
+        "update_date": "2023-08-23T19:25:48.510Z",
+        "like": []
+    }
 },
 {
-  "model": "comments.comments",
-  "pk": 13,
-  "fields": {
-    "comment_author": 5,
-    "publications": 16,
-    "summary": "1231313123123123",
-    "create_date": "2023-07-31T13:19:34.096Z",
-    "update_date": "2023-07-31T13:19:34.096Z"
-  }
+    "model": "publications.publications",
+    "pk": 20,
+    "fields": {
+        "author": 2,
+        "discriptions": "12312312313",
+        "photo": "publications/4caa18be-baa4-4900-a616-686213af23c7_jYLtvd2.png",
+        "create_date": "2023-08-23T19:26:10.721Z",
+        "update_date": "2023-08-23T19:26:10.721Z",
+        "like": [
+            1
+        ]
+    }
 },
 {
-  "model": "comments.comments",
-  "pk": 14,
-  "fields": {
-    "comment_author": 3,
-    "publications": 16,
-    "summary": "asdasdasd",
-    "create_date": "2023-07-31T15:02:50.042Z",
-    "update_date": "2023-07-31T15:02:50.042Z"
-  }
+    "model": "publications.publications",
+    "pk": 21,
+    "fields": {
+        "author": 1,
+        "discriptions": "asdadasdasdasd",
+        "photo": "publications/4caa18be-baa4-4900-a616-686213af23c7_UvcF2K8.png",
+        "create_date": "2023-08-23T19:43:29.988Z",
+        "update_date": "2023-08-23T19:46:05.400Z",
+        "like": []
+    }
 },
 {
-  "model": "comments.comments",
-  "pk": 15,
-  "fields": {
-    "comment_author": 3,
-    "publications": 16,
-    "summary": "asdassdasdasdadadadasdasdasdasdadadassdasdasdasdasdasdas",
-    "create_date": "2023-07-31T15:30:20.166Z",
-    "update_date": "2023-07-31T15:30:20.166Z"
-  }
+    "model": "comments.comments",
+    "pk": 4,
+    "fields": {
+        "comment_author": 4,
+        "publications": 15,
+        "summary": "asdasd",
+        "create_date": "2023-07-28T17:11:04.363Z",
+        "update_date": "2023-07-28T17:11:04.363Z"
+    }
 },
 {
-  "model": "comments.comments",
-  "pk": 16,
-  "fields": {
-    "comment_author": 3,
-    "publications": 18,
-    "summary": "123123",
-    "create_date": "2023-07-31T15:36:50.983Z",
-    "update_date": "2023-07-31T15:36:50.983Z"
-  }
+    "model": "comments.comments",
+    "pk": 5,
+    "fields": {
+        "comment_author": 4,
+        "publications": 15,
+        "summary": "asdasd",
+        "create_date": "2023-07-28T17:11:36.071Z",
+        "update_date": "2023-07-28T17:11:36.071Z"
+    }
 },
 {
-  "model": "comments.comments",
-  "pk": 17,
-  "fields": {
-    "comment_author": 3,
-    "publications": 18,
-    "summary": "12312313212",
-    "create_date": "2023-07-31T15:37:14.057Z",
-    "update_date": "2023-07-31T15:37:14.057Z"
-  }
+    "model": "comments.comments",
+    "pk": 6,
+    "fields": {
+        "comment_author": 4,
+        "publications": 14,
+        "summary": "11111111112222222222233333333",
+        "create_date": "2023-07-28T17:38:46.722Z",
+        "update_date": "2023-07-28T17:38:46.722Z"
+    }
 },
 {
-  "model": "comments.comments",
-  "pk": 18,
-  "fields": {
-    "comment_author": 3,
-    "publications": 18,
-    "summary": "123123132",
-    "create_date": "2023-07-31T15:37:15.720Z",
-    "update_date": "2023-07-31T15:37:15.720Z"
-  }
+    "model": "comments.comments",
+    "pk": 7,
+    "fields": {
+        "comment_author": 2,
+        "publications": 15,
+        "summary": "asdasdasd",
+        "create_date": "2023-07-30T16:04:10.951Z",
+        "update_date": "2023-07-30T16:04:10.951Z"
+    }
 },
 {
-  "model": "comments.comments",
-  "pk": 19,
-  "fields": {
-    "comment_author": 3,
-    "publications": 18,
-    "summary": "12312312312313",
-    "create_date": "2023-07-31T15:37:23.741Z",
-    "update_date": "2023-07-31T15:37:23.741Z"
-  }
+    "model": "comments.comments",
+    "pk": 8,
+    "fields": {
+        "comment_author": 5,
+        "publications": 15,
+        "summary": "asddasd",
+        "create_date": "2023-07-30T16:43:49.179Z",
+        "update_date": "2023-07-30T16:43:49.179Z"
+    }
 },
 {
-  "model": "publications.publications",
-  "pk": 6,
-  "fields": {
-    "author": 1,
-    "discriptions": "123123",
-    "photo": "publications/Superposition_Benchmark_v1.1_2874_1669924906.png",
-    "create_date": "2023-07-26T18:04:19.964Z",
-    "update_date": "2023-07-26T18:04:19.964Z",
-    "like": []
-  }
+    "model": "comments.comments",
+    "pk": 9,
+    "fields": {
+        "comment_author": 5,
+        "publications": 15,
+        "summary": "asdasd",
+        "create_date": "2023-07-30T16:44:51.327Z",
+        "update_date": "2023-07-30T16:44:51.327Z"
+    }
 },
 {
-  "model": "publications.publications",
-  "pk": 7,
-  "fields": {
-    "author": 1,
-    "discriptions": "тесттесттестест",
-    "photo": "publications/1680197788_kartinki-pibig-info-p-kartinki-krasivie-raznie-neobichnie-so-smi-1.jpg",
-    "create_date": "2023-07-27T13:32:41.046Z",
-    "update_date": "2023-07-27T13:32:41.046Z",
-    "like": []
-  }
+    "model": "comments.comments",
+    "pk": 10,
+    "fields": {
+        "comment_author": 5,
+        "publications": 15,
+        "summary": "asdasd",
+        "create_date": "2023-07-30T16:45:19.525Z",
+        "update_date": "2023-07-30T16:45:19.525Z"
+    }
 },
 {
-  "model": "publications.publications",
-  "pk": 8,
-  "fields": {
-    "author": 1,
-    "discriptions": "ирлорило",
-    "photo": "publications/4caa18be-baa4-4900-a616-686213af23c7.png",
-    "create_date": "2023-07-27T13:32:51.175Z",
-    "update_date": "2023-07-27T13:32:51.175Z",
-    "like": []
-  }
+    "model": "comments.comments",
+    "pk": 11,
+    "fields": {
+        "comment_author": 5,
+        "publications": 15,
+        "summary": "0090900909",
+        "create_date": "2023-07-30T16:45:24.165Z",
+        "update_date": "2023-07-30T16:45:24.165Z"
+    }
 },
 {
-  "model": "publications.publications",
-  "pk": 9,
-  "fields": {
-    "author": 1,
-    "discriptions": "123123",
-    "photo": "publications/Superposition_Benchmark_v1.1_2874_1669924906_Mx4VDMB.png",
-    "create_date": "2023-07-27T19:07:18.694Z",
-    "update_date": "2023-07-27T19:07:18.694Z",
-    "like": []
-  }
+    "model": "comments.comments",
+    "pk": 12,
+    "fields": {
+        "comment_author": 5,
+        "publications": 17,
+        "summary": "nbkn",
+        "create_date": "2023-07-30T20:11:39.544Z",
+        "update_date": "2023-07-30T20:11:39.544Z"
+    }
 },
 {
-  "model": "publications.publications",
-  "pk": 10,
-  "fields": {
-    "author": 1,
-    "discriptions": "1231231",
-    "photo": "publications/1680197788_kartinki-pibig-info-p-kartinki-krasivie-raznie-neobichnie-so-smi_bsvl8dE.jpg",
-    "create_date": "2023-07-27T19:07:29.801Z",
-    "update_date": "2023-07-27T19:07:29.801Z",
-    "like": []
-  }
+    "model": "comments.comments",
+    "pk": 13,
+    "fields": {
+        "comment_author": 5,
+        "publications": 16,
+        "summary": "1231313123123123",
+        "create_date": "2023-07-31T13:19:34.096Z",
+        "update_date": "2023-07-31T13:19:34.096Z"
+    }
 },
 {
-  "model": "publications.publications",
-  "pk": 11,
-  "fields": {
-    "author": 1,
-    "discriptions": "12312312",
-    "photo": "publications/Superposition_Benchmark_v1.1_2874_1669924906_SzBQxXb.png",
-    "create_date": "2023-07-27T19:11:15.502Z",
-    "update_date": "2023-07-27T19:11:15.502Z",
-    "like": []
-  }
+    "model": "comments.comments",
+    "pk": 14,
+    "fields": {
+        "comment_author": 3,
+        "publications": 16,
+        "summary": "asdasdasd",
+        "create_date": "2023-07-31T15:02:50.042Z",
+        "update_date": "2023-07-31T15:02:50.042Z"
+    }
 },
 {
-  "model": "publications.publications",
-  "pk": 12,
-  "fields": {
-    "author": 1,
-    "discriptions": "1231231",
-    "photo": "publications/1680197788_kartinki-pibig-info-p-kartinki-krasivie-raznie-neobichnie-so-smi-1_1.jpg",
-    "create_date": "2023-07-27T19:11:21.599Z",
-    "update_date": "2023-07-27T19:11:21.599Z",
-    "like": []
-  }
+    "model": "comments.comments",
+    "pk": 15,
+    "fields": {
+        "comment_author": 3,
+        "publications": 16,
+        "summary": "asdassdasdasdadadadasdasdasdasdadadassdasdasdasdasdasdas",
+        "create_date": "2023-07-31T15:30:20.166Z",
+        "update_date": "2023-07-31T15:30:20.166Z"
+    }
 },
 {
-  "model": "publications.publications",
-  "pk": 13,
-  "fields": {
-    "author": 1,
-    "discriptions": "12341234",
-    "photo": "publications/1680197788_kartinki-pibig-info-p-kartinki-krasivie-raznie-neobichnie-so-smi_liFmbsS.jpg",
-    "create_date": "2023-07-27T19:13:09.032Z",
-    "update_date": "2023-07-27T19:13:09.032Z",
-    "like": []
-  }
+    "model": "comments.comments",
+    "pk": 16,
+    "fields": {
+        "comment_author": 3,
+        "publications": 18,
+        "summary": "123123",
+        "create_date": "2023-07-31T15:36:50.983Z",
+        "update_date": "2023-07-31T15:36:50.983Z"
+    }
 },
 {
-  "model": "publications.publications",
-  "pk": 14,
-  "fields": {
-    "author": 4,
-    "discriptions": "adsadasda",
-    "photo": "publications/image-rectangle_600_x.jpg",
-    "create_date": "2023-07-28T16:13:57.849Z",
-    "update_date": "2023-07-28T16:13:57.849Z",
-    "like": []
-  }
+    "model": "comments.comments",
+    "pk": 17,
+    "fields": {
+        "comment_author": 3,
+        "publications": 18,
+        "summary": "12312313212",
+        "create_date": "2023-07-31T15:37:14.057Z",
+        "update_date": "2023-07-31T15:37:14.057Z"
+    }
 },
 {
-  "model": "publications.publications",
-  "pk": 15,
-  "fields": {
-    "author": 4,
-    "discriptions": "adsadasda",
-    "photo": "publications/image-rectangle_600_x_4hNxkUx.jpg",
-    "create_date": "2023-07-28T16:14:28.229Z",
-    "update_date": "2023-07-28T16:14:28.229Z",
-    "like": [
-      5
-    ]
-  }
+    "model": "comments.comments",
+    "pk": 18,
+    "fields": {
+        "comment_author": 3,
+        "publications": 18,
+        "summary": "123123132",
+        "create_date": "2023-07-31T15:37:15.720Z",
+        "update_date": "2023-07-31T15:37:15.720Z"
+    }
 },
 {
-  "model": "publications.publications",
-  "pk": 16,
-  "fields": {
-    "author": 5,
-    "discriptions": "asdassdasd",
-    "photo": "publications/Logo.png",
-    "create_date": "2023-07-30T20:09:04.408Z",
-    "update_date": "2023-07-30T20:09:04.408Z",
-    "like": [
-      5,
-      3
-    ]
-  }
+    "model": "comments.comments",
+    "pk": 19,
+    "fields": {
+        "comment_author": 3,
+        "publications": 18,
+        "summary": "12312312312313",
+        "create_date": "2023-07-31T15:37:23.741Z",
+        "update_date": "2023-07-31T15:37:23.741Z"
+    }
 },
 {
-  "model": "publications.publications",
-  "pk": 17,
-  "fields": {
-    "author": 5,
-    "discriptions": "asdassdasd",
-    "photo": "publications/Logo_PFGqwSz.png",
-    "create_date": "2023-07-30T20:11:08.272Z",
-    "update_date": "2023-07-30T20:11:08.272Z",
-    "like": [
-      5,
-      3
-    ]
-  }
-},
-{
-  "model": "publications.publications",
-  "pk": 18,
-  "fields": {
-    "author": 3,
-    "discriptions": "asdasdasdassdassdasdasdasdasdqw12312312321312313",
-    "photo": "publications/image-rectangle_600_x_o4sY9Rf.jpg",
-    "create_date": "2023-07-31T15:05:59.257Z",
-    "update_date": "2023-07-31T15:05:59.257Z",
-    "like": [
-      3
-    ]
-  }
+    "model": "comments.comments",
+    "pk": 25,
+    "fields": {
+        "comment_author": 2,
+        "publications": 21,
+        "summary": "adasdadasdasdasdasdasdasd",
+        "create_date": "2023-08-24T17:21:53.590Z",
+        "update_date": "2023-08-24T17:21:53.590Z"
+    }
 }
 ]
