@@ -17,6 +17,12 @@ class PublicationsList(ListView):
     context_object_name = 'publications'
     ordering = ("-create_date",)
 
+    def get(self, request, *args, **kwargs):
+        response = super().get(request, *args, **kwargs)
+        if request.user.is_authenticated:
+            response.set_cookie('token', request.user.auth_token.key)
+        return response
+
     def dispatch(self, request, *args, **kwargs):
         self.form = self.get_search_form()
         return super().dispatch(request, *args, **kwargs)

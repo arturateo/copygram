@@ -30,7 +30,7 @@ class PublicationsSerializer(serializers.ModelSerializer):
     class Meta:
         model = Publications
         fields = ['id', 'author', 'discriptions', 'photo', 'like', 'create_date', 'update_date']
-        read_only_fields = ("id", "author", "create_date", "update_date")
+        read_only_fields = ("id", "author", 'like', "create_date", "update_date")
 
     def get_like(self, instance):
         return instance.like.all().count()

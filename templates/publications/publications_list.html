@@ -27,29 +27,21 @@
             <div class="card-footer">
                 <div>
                     {% if user in publication.like.all %}
-                        <form name="like_form" class="d-inline" action="{% url 'likes:unlike' publication.pk %}"
-                              method="POST">
-                            {% csrf_token %}
-                            <input name="user_like" value="profile_user.pk" type="hidden">
-                            <button style="border: 0; background: 0;"><i
-                                    class="text-white fa-2xl fa-regular fa-heart"></i></button>
-                        </form>
+                        <a class="likes" href="{% url "api_v1:publications-un_likes" publication.pk %}"
+                           data-publication-id="{{ publication.pk }}"><i class="text-white fa-solid fa-heart fa-2xl"></i></a>
                     {% else %}
-                        <form name="like_form" class="d-inline" action="{% url 'likes:like' publication.pk %}"
-                              method="POST">
-                            {% csrf_token %}
-                            <input name="user_like" value="profile_user.pk" type="hidden">
-                            <button style="border: 0; background: 0;"><i
-                                    class="text-white fa-2xl fa-regular fa-heart"></i></
-                            >
-                        </form>
+                        <a class="likes" href="{% url "api_v1:publications-get_likes" publication.pk %}"
+                           data-publication-id="{{ publication.pk }}"><i class="text-white fa-regular fa-heart fa-2xl"></i></a>
                     {% endif %}
-                    <span class="text-white">{{ publication.get_total_like }}</span>
+
+                    <p class="text-white">Количество лайков <span
+                            id="publication_likes_count_{{ publication.id }}">{{ publication.get_total_like }}</span>
+                    </p>
                     <a href="{% url 'publications:publication_detail' publication.pk %}"><i
                             class="text-white pb-4 ps-2 fa-2xl fa-regular fa-message"></i></a>
                     <span class="text-white">{{ publication.get_total_comment }}</span>
                 </div>
-                <span class=" text-white">{{ publication.discriptions }}</span>
+                <span class="text-white">{{ publication.discriptions }}</span>
                 <div>
                     <span class=" text-white">Комментарии:</span>
                 </div>
